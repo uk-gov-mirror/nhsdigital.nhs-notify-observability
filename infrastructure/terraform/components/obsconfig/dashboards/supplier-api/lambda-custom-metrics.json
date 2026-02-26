@@ -1,0 +1,2693 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 175,
+  "links": [],
+  "panels": [
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 29,
+      "panels": [],
+      "title": "Mi Updates Transformer",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "cloudwatch",
+        "uid": "berau1co8zoqod"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "fillOpacity": 80,
+            "gradientMode": "opacity",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineWidth": 1,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "fieldMinMax": false,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 1
+      },
+      "id": 30,
+      "options": {
+        "barRadius": 0,
+        "barWidth": 0.97,
+        "fullHighlight": false,
+        "groupWidth": 0.7,
+        "legend": {
+          "calcs": ["min", "max", "mean", "sum"],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "orientation": "auto",
+        "showValue": "auto",
+        "stacking": "none",
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        },
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0
+      },
+      "pluginVersion": "10.4.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "berau1co8zoqod"
+          },
+          "dimensions": {},
+          "expression": "",
+          "id": "",
+          "label": "\n",
+          "logGroups": [],
+          "matchExact": false,
+          "metricEditorMode": 0,
+          "metricName": "success",
+          "metricQueryType": 1,
+          "namespace": "${prefix}mi-updates-transformer",
+          "period": "$agg",
+          "queryMode": "Metrics",
+          "refId": "A",
+          "region": "$region",
+          "sql": {
+            "from": {
+              "property": {
+                "name": "${prefix}mi-updates-transformer",
+                "type": "string"
+              },
+              "type": "property"
+            },
+            "groupBy": {
+              "expressions": [
+                {
+                  "property": {
+                    "name": "eventType",
+                    "type": "string"
+                  },
+                  "type": "groupBy"
+                }
+              ],
+              "type": "and"
+            },
+            "select": {
+              "name": "SUM",
+              "parameters": [
+                {
+                  "name": "events published",
+                  "type": "functionParameter"
+                }
+              ],
+              "type": "function"
+            }
+          },
+          "sqlExpression": "SELECT SUM(\"events published\") FROM \"${prefix}mi-updates-transformer\" GROUP BY eventType",
+          "statistic": "Sum"
+        }
+      ],
+      "title": "Mi Updates Transformer",
+      "type": "barchart"
+    },
+    {
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 9
+      },
+      "id": 27,
+      "title": "Letter Updates Transformer",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "cloudwatch",
+        "uid": "berau1co8zoqod"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 1,
+            "pointSize": 8,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "fieldMinMax": false,
+          "mappings": [],
+          "noValue": "0",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 10
+      },
+      "id": 28,
+      "options": {
+        "legend": {
+          "calcs": ["mean", "min", "max", "sum"],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.4.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "berau1co8zoqod"
+          },
+          "dimensions": {},
+          "expression": "",
+          "id": "",
+          "label": "\n",
+          "logGroups": [],
+          "matchExact": false,
+          "metricEditorMode": 0,
+          "metricName": "success",
+          "metricQueryType": 1,
+          "namespace": "${prefix}letter-updates-transformer",
+          "period": "$agg",
+          "queryMode": "Metrics",
+          "refId": "A",
+          "region": "$region",
+          "sql": {
+            "from": {
+              "property": {
+                "name": "${prefix}letter-updates-transformer",
+                "type": "string"
+              },
+              "type": "property"
+            },
+            "groupBy": {
+              "expressions": [
+                {
+                  "property": {
+                    "name": "eventType",
+                    "type": "string"
+                  },
+                  "type": "groupBy"
+                }
+              ],
+              "type": "and"
+            },
+            "select": {
+              "name": "SUM",
+              "parameters": [
+                {
+                  "name": "events published",
+                  "type": "functionParameter"
+                }
+              ],
+              "type": "function"
+            }
+          },
+          "sqlExpression": "SELECT SUM(\"events published\") FROM \"${prefix}letter-updates-transformer\" GROUP BY eventType",
+          "statistic": "Sum"
+        }
+      ],
+      "title": "Letter Updates Transformer",
+      "type": "timeseries"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 18
+      },
+      "id": 23,
+      "panels": [],
+      "title": "Post Mi",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "cloudwatch",
+        "uid": "berau1co8zoqod"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 1,
+            "pointSize": 8,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "fieldMinMax": false,
+          "mappings": [],
+          "noValue": "0",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 15,
+        "x": 0,
+        "y": 19
+      },
+      "id": 20,
+      "options": {
+        "legend": {
+          "calcs": ["mean", "min", "max", "sum"],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.4.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "berau1co8zoqod"
+          },
+          "dimensions": {},
+          "expression": "",
+          "id": "",
+          "label": "\n",
+          "logGroups": [],
+          "matchExact": false,
+          "metricEditorMode": 0,
+          "metricName": "success",
+          "metricQueryType": 1,
+          "namespace": "${prefix}postmi",
+          "period": "$agg",
+          "queryMode": "Metrics",
+          "refId": "A",
+          "region": "$region",
+          "sql": {
+            "from": {
+              "property": {
+                "name": "${prefix}postmi",
+                "type": "string"
+              },
+              "type": "property"
+            },
+            "groupBy": {
+              "expressions": [
+                {
+                  "property": {
+                    "name": "supplier",
+                    "type": "string"
+                  },
+                  "type": "groupBy"
+                },
+                {
+                  "property": {
+                    "name": "lineItem",
+                    "type": "string"
+                  },
+                  "type": "groupBy"
+                }
+              ],
+              "type": "and"
+            },
+            "select": {
+              "name": "SUM",
+              "parameters": [
+                {
+                  "name": "LineItem per supplier",
+                  "type": "functionParameter"
+                }
+              ],
+              "type": "function"
+            }
+          },
+          "sqlExpression": "SELECT SUM(\"LineItem per supplier\") FROM \"${prefix}postmi\" GROUP BY supplier, lineItem",
+          "statistic": "Sum"
+        }
+      ],
+      "title": "Post Mi Line Items",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "cloudwatch",
+        "uid": "berau1co8zoqod"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            }
+          },
+          "mappings": []
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 5,
+        "x": 15,
+        "y": 19
+      },
+      "id": 14,
+      "options": {
+        "displayLabels": ["value", "name"],
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true,
+          "values": ["percent", "value"]
+        },
+        "pieType": "donut",
+        "reduceOptions": {
+          "calcs": ["sum"],
+          "fields": "",
+          "values": false
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.4.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "berau1co8zoqod"
+          },
+          "dimensions": {},
+          "expression": "",
+          "id": "",
+          "label": "",
+          "logGroups": [],
+          "matchExact": false,
+          "metricEditorMode": 0,
+          "metricName": "success",
+          "metricQueryType": 1,
+          "namespace": "${prefix}postmi",
+          "period": "",
+          "queryMode": "Metrics",
+          "refId": "A",
+          "region": "$region",
+          "sql": {
+            "from": {
+              "property": {
+                "name": "${prefix}postmi",
+                "type": "string"
+              },
+              "type": "property"
+            },
+            "groupBy": {
+              "expressions": [
+                {
+                  "property": {
+                    "name": "supplier",
+                    "type": "string"
+                  },
+                  "type": "groupBy"
+                }
+              ],
+              "type": "and"
+            },
+            "select": {
+              "name": "SUM",
+              "parameters": [
+                {
+                  "name": "success",
+                  "type": "functionParameter"
+                }
+              ],
+              "type": "function"
+            }
+          },
+          "sqlExpression": "SELECT SUM(success) FROM \"${prefix}postmi\" GROUP BY supplier",
+          "statistic": "Sum"
+        }
+      ],
+      "title": "Post Mi by suppliers",
+      "type": "piechart"
+    },
+    {
+      "datasource": {
+        "type": "cloudwatch",
+        "uid": "berau1co8zoqod"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 4,
+        "x": 20,
+        "y": 19
+      },
+      "id": 15,
+      "options": {
+        "minVizHeight": 75,
+        "minVizWidth": 75,
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": ["sum"],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true,
+        "sizing": "auto"
+      },
+      "pluginVersion": "10.4.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "berau1co8zoqod"
+          },
+          "dimensions": {},
+          "expression": "",
+          "id": "",
+          "label": "Errors",
+          "logGroups": [],
+          "matchExact": false,
+          "metricEditorMode": 0,
+          "metricName": "success",
+          "metricQueryType": 1,
+          "namespace": "${prefix}postmi",
+          "period": "",
+          "queryMode": "Metrics",
+          "refId": "A",
+          "region": "$region",
+          "sql": {
+            "from": {
+              "property": {
+                "name": "${prefix}postmi",
+                "type": "string"
+              },
+              "type": "property"
+            },
+            "select": {
+              "name": "SUM",
+              "parameters": [
+                {
+                  "name": "failure",
+                  "type": "functionParameter"
+                }
+              ],
+              "type": "function"
+            }
+          },
+          "sqlExpression": "SELECT SUM(failure) FROM \"${prefix}postmi\"",
+          "statistic": "Sum"
+        }
+      ],
+      "title": "Post Mi Failures",
+      "type": "gauge"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 27
+      },
+      "id": 19,
+      "panels": [
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "berau1co8zoqod"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 0,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineStyle": {
+                  "fill": "solid"
+                },
+                "lineWidth": 1,
+                "pointSize": 8,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "auto",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "fieldMinMax": false,
+              "mappings": [],
+              "noValue": "0",
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 14,
+            "x": 0,
+            "y": 10
+          },
+          "id": 26,
+          "options": {
+            "legend": {
+              "calcs": ["mean", "min", "max", "sum"],
+              "displayMode": "table",
+              "placement": "right",
+              "showLegend": true
+            },
+            "tooltip": {
+              "mode": "single",
+              "sort": "none"
+            }
+          },
+          "pluginVersion": "10.4.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "cloudwatch",
+                "uid": "berau1co8zoqod"
+              },
+              "dimensions": {},
+              "expression": "",
+              "id": "",
+              "label": "${SUM}",
+              "logGroups": [],
+              "matchExact": false,
+              "metricEditorMode": 0,
+              "metricName": "success",
+              "metricQueryType": 1,
+              "namespace": "${prefix}patchletter",
+              "period": "$agg",
+              "queryMode": "Metrics",
+              "refId": "A",
+              "region": "$region",
+              "sql": {
+                "from": {
+                  "property": {
+                    "name": "${prefix}patchletter",
+                    "type": "string"
+                  },
+                  "type": "property"
+                },
+                "groupBy": {
+                  "expressions": [
+                    {
+                      "property": {
+                        "name": "status",
+                        "type": "string"
+                      },
+                      "type": "groupBy"
+                    }
+                  ],
+                  "type": "and"
+                },
+                "select": {
+                  "name": "SUM",
+                  "parameters": [
+                    {
+                      "name": "success",
+                      "type": "functionParameter"
+                    }
+                  ],
+                  "type": "function"
+                }
+              },
+              "sqlExpression": "SELECT SUM(success) FROM \"${prefix}patchletter\" GROUP BY status",
+              "statistic": "Sum"
+            }
+          ],
+          "title": "Patch Letter by Status",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "berau1co8zoqod"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                }
+              },
+              "mappings": []
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 5,
+            "x": 14,
+            "y": 10
+          },
+          "id": 24,
+          "options": {
+            "displayLabels": ["value", "name"],
+            "legend": {
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true,
+              "values": ["percent", "value"]
+            },
+            "pieType": "donut",
+            "reduceOptions": {
+              "calcs": ["sum"],
+              "fields": "",
+              "values": false
+            },
+            "tooltip": {
+              "mode": "single",
+              "sort": "none"
+            }
+          },
+          "pluginVersion": "10.4.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "cloudwatch",
+                "uid": "berau1co8zoqod"
+              },
+              "dimensions": {},
+              "expression": "",
+              "id": "",
+              "label": "",
+              "logGroups": [],
+              "matchExact": false,
+              "metricEditorMode": 0,
+              "metricName": "success",
+              "metricQueryType": 1,
+              "namespace": "${prefix}patchletter",
+              "period": "",
+              "queryMode": "Metrics",
+              "refId": "A",
+              "region": "$region",
+              "sql": {
+                "from": {
+                  "property": {
+                    "name": "${prefix}patchletter",
+                    "type": "string"
+                  },
+                  "type": "property"
+                },
+                "groupBy": {
+                  "expressions": [
+                    {
+                      "property": {
+                        "name": "supplier",
+                        "type": "string"
+                      },
+                      "type": "groupBy"
+                    }
+                  ],
+                  "type": "and"
+                },
+                "select": {
+                  "name": "SUM",
+                  "parameters": [
+                    {
+                      "name": "success",
+                      "type": "functionParameter"
+                    }
+                  ],
+                  "type": "function"
+                }
+              },
+              "sqlExpression": "SELECT SUM(success) FROM \"${prefix}patchletter\" GROUP BY supplier",
+              "statistic": "Sum"
+            }
+          ],
+          "title": "Patch Letter by suppliers",
+          "type": "piechart"
+        },
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "berau1co8zoqod"
+          },
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 1
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 4,
+            "x": 19,
+            "y": 10
+          },
+          "id": 25,
+          "options": {
+            "minVizHeight": 75,
+            "minVizWidth": 75,
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": ["sum"],
+              "fields": "",
+              "values": false
+            },
+            "showThresholdLabels": false,
+            "showThresholdMarkers": true,
+            "sizing": "auto"
+          },
+          "pluginVersion": "10.4.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "cloudwatch",
+                "uid": "berau1co8zoqod"
+              },
+              "dimensions": {},
+              "expression": "",
+              "id": "",
+              "label": "Errors",
+              "logGroups": [],
+              "matchExact": false,
+              "metricEditorMode": 0,
+              "metricName": "success",
+              "metricQueryType": 1,
+              "namespace": "${prefix}patchletter",
+              "period": "",
+              "queryMode": "Metrics",
+              "refId": "A",
+              "region": "$region",
+              "sql": {
+                "from": {
+                  "property": {
+                    "name": "${prefix}patchletter",
+                    "type": "string"
+                  },
+                  "type": "property"
+                },
+                "select": {
+                  "name": "SUM",
+                  "parameters": [
+                    {
+                      "name": "failure",
+                      "type": "functionParameter"
+                    }
+                  ],
+                  "type": "function"
+                }
+              },
+              "sqlExpression": "SELECT SUM(failure) FROM \"${prefix}patchletter\"",
+              "statistic": "Sum"
+            }
+          ],
+          "title": "Patch Letter Failures",
+          "type": "gauge"
+        }
+      ],
+      "title": "Patch Letter",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 28
+      },
+      "id": 16,
+      "panels": [
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "berau1co8zoqod"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 0,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineStyle": {
+                  "fill": "solid"
+                },
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "auto",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 18,
+            "x": 0,
+            "y": 19
+          },
+          "id": 10,
+          "options": {
+            "legend": {
+              "calcs": ["mean", "min", "max", "sum"],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "mode": "single",
+              "sort": "none"
+            }
+          },
+          "pluginVersion": "10.4.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "cloudwatch",
+                "uid": "berau1co8zoqod"
+              },
+              "dimensions": {},
+              "expression": "",
+              "id": "",
+              "label": "",
+              "logGroups": [],
+              "matchExact": false,
+              "metricEditorMode": 0,
+              "metricName": "success",
+              "metricQueryType": 0,
+              "namespace": "${prefix}getletterdata",
+              "period": "$agg",
+              "queryMode": "Metrics",
+              "refId": "A",
+              "region": "$region",
+              "sql": {
+                "from": {
+                  "property": {
+                    "name": "${namespacePrefix}getletter",
+                    "type": "string"
+                  },
+                  "type": "property"
+                },
+                "groupBy": {
+                  "expressions": [
+                    {
+                      "property": {
+                        "name": "status",
+                        "type": "string"
+                      },
+                      "type": "groupBy"
+                    }
+                  ],
+                  "type": "and"
+                },
+                "select": {
+                  "name": "SUM",
+                  "parameters": [
+                    {
+                      "name": "success",
+                      "type": "functionParameter"
+                    }
+                  ],
+                  "type": "function"
+                }
+              },
+              "sqlExpression": "SELECT SUM(success) FROM \"${namespacePrefix}getletter\" GROUP BY status",
+              "statistic": "Sum"
+            }
+          ],
+          "title": "Get Letter Data by supplier",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "berau1co8zoqod"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 1
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 3,
+            "x": 18,
+            "y": 19
+          },
+          "id": 11,
+          "options": {
+            "minVizHeight": 75,
+            "minVizWidth": 75,
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": ["sum"],
+              "fields": "",
+              "values": false
+            },
+            "showThresholdLabels": false,
+            "showThresholdMarkers": true,
+            "sizing": "auto"
+          },
+          "pluginVersion": "10.4.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "cloudwatch",
+                "uid": "berau1co8zoqod"
+              },
+              "dimensions": {},
+              "expression": "",
+              "id": "",
+              "label": "Failure",
+              "logGroups": [],
+              "matchExact": false,
+              "metricEditorMode": 0,
+              "metricName": "success",
+              "metricQueryType": 1,
+              "namespace": "${prefix}getletterdata",
+              "period": "",
+              "queryMode": "Metrics",
+              "refId": "A",
+              "region": "$region",
+              "sql": {
+                "from": {
+                  "property": {
+                    "name": "${prefix}getletterdata",
+                    "type": "string"
+                  },
+                  "type": "property"
+                },
+                "select": {
+                  "name": "SUM",
+                  "parameters": [
+                    {
+                      "name": "failure",
+                      "type": "functionParameter"
+                    }
+                  ],
+                  "type": "function"
+                }
+              },
+              "sqlExpression": "SELECT SUM(failure) FROM \"${prefix}getletterdata\"",
+              "statistic": "Sum"
+            }
+          ],
+          "title": "Get Letters Failures",
+          "type": "gauge"
+        }
+      ],
+      "title": "Get Letter Data",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 29
+      },
+      "id": 12,
+      "panels": [
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "berau1co8zoqod"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "fillOpacity": 80,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineWidth": 1,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "fieldMinMax": false,
+              "mappings": [],
+              "noValue": "0",
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 14,
+            "x": 0,
+            "y": 3
+          },
+          "id": 13,
+          "options": {
+            "barRadius": 0,
+            "barWidth": 0.97,
+            "fullHighlight": false,
+            "groupWidth": 0.7,
+            "legend": {
+              "calcs": ["mean", "min", "max", "sum"],
+              "displayMode": "table",
+              "placement": "right",
+              "showLegend": true
+            },
+            "orientation": "auto",
+            "showValue": "auto",
+            "stacking": "none",
+            "tooltip": {
+              "mode": "single",
+              "sort": "none"
+            },
+            "xTickLabelRotation": 0,
+            "xTickLabelSpacing": 0
+          },
+          "pluginVersion": "10.4.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "cloudwatch",
+                "uid": "berau1co8zoqod"
+              },
+              "dimensions": {},
+              "expression": "",
+              "id": "",
+              "label": "${SUM}",
+              "logGroups": [],
+              "matchExact": false,
+              "metricEditorMode": 0,
+              "metricName": "success",
+              "metricQueryType": 1,
+              "namespace": "${prefix}amendmenteventtransformer",
+              "period": "$agg",
+              "queryMode": "Metrics",
+              "refId": "A",
+              "region": "$region",
+              "sql": {
+                "from": {
+                  "property": {
+                    "name": "${prefix}amendmenteventtransformer",
+                    "type": "string"
+                  },
+                  "type": "property"
+                },
+                "groupBy": {
+                  "expressions": [
+                    {
+                      "property": {
+                        "name": "status",
+                        "type": "string"
+                      },
+                      "type": "groupBy"
+                    }
+                  ],
+                  "type": "and"
+                },
+                "select": {
+                  "name": "SUM",
+                  "parameters": [
+                    {
+                      "name": "success",
+                      "type": "functionParameter"
+                    }
+                  ],
+                  "type": "function"
+                }
+              },
+              "sqlExpression": "SELECT SUM(success) FROM \"${prefix}amendmenteventtransformer\" GROUP BY status",
+              "statistic": "Sum"
+            }
+          ],
+          "title": "Amendment Event Transformer by Status",
+          "type": "barchart"
+        },
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "berau1co8zoqod"
+          },
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                }
+              },
+              "mappings": []
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 5,
+            "x": 14,
+            "y": 3
+          },
+          "id": 3,
+          "options": {
+            "displayLabels": ["name"],
+            "legend": {
+              "displayMode": "table",
+              "placement": "right",
+              "showLegend": true,
+              "values": ["value", "percent"]
+            },
+            "pieType": "pie",
+            "reduceOptions": {
+              "calcs": ["sum"],
+              "fields": "",
+              "values": false
+            },
+            "tooltip": {
+              "mode": "single",
+              "sort": "none"
+            }
+          },
+          "pluginVersion": "10.4.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "cloudwatch",
+                "uid": "berau1co8zoqod"
+              },
+              "dimensions": {},
+              "expression": "",
+              "id": "",
+              "label": "",
+              "logGroups": [],
+              "matchExact": false,
+              "metricEditorMode": 0,
+              "metricName": "success",
+              "metricQueryType": 1,
+              "namespace": "${prefix}amendmenteventtransformer",
+              "period": "",
+              "queryMode": "Metrics",
+              "refId": "A",
+              "region": "$region",
+              "sql": {
+                "from": {
+                  "property": {
+                    "name": "${prefix}amendmenteventtransformer",
+                    "type": "string"
+                  },
+                  "type": "property"
+                },
+                "groupBy": {
+                  "expressions": [
+                    {
+                      "property": {
+                        "name": "supplier",
+                        "type": "string"
+                      },
+                      "type": "groupBy"
+                    }
+                  ],
+                  "type": "and"
+                },
+                "select": {
+                  "name": "SUM",
+                  "parameters": [
+                    {
+                      "name": "success",
+                      "type": "functionParameter"
+                    }
+                  ],
+                  "type": "function"
+                }
+              },
+              "sqlExpression": "SELECT SUM(success) FROM \"${prefix}amendmenteventtransformer\" GROUP BY supplier",
+              "statistic": "Sum"
+            }
+          ],
+          "title": "Amendment Event Transformer by suppliers",
+          "type": "piechart"
+        },
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "berau1co8zoqod"
+          },
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 1
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 4,
+            "x": 19,
+            "y": 3
+          },
+          "id": 4,
+          "options": {
+            "minVizHeight": 75,
+            "minVizWidth": 75,
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": ["sum"],
+              "fields": "",
+              "values": false
+            },
+            "showThresholdLabels": false,
+            "showThresholdMarkers": true,
+            "sizing": "auto"
+          },
+          "pluginVersion": "10.4.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "cloudwatch",
+                "uid": "berau1co8zoqod"
+              },
+              "dimensions": {},
+              "expression": "",
+              "id": "",
+              "label": "Errors",
+              "logGroups": [],
+              "matchExact": false,
+              "metricEditorMode": 0,
+              "metricName": "success",
+              "metricQueryType": 1,
+              "namespace": "${prefix}amendmenteventtransformer",
+              "period": "",
+              "queryMode": "Metrics",
+              "refId": "A",
+              "region": "$region",
+              "sql": {
+                "from": {
+                  "property": {
+                    "name": "${prefix}amendmenteventtransformer",
+                    "type": "string"
+                  },
+                  "type": "property"
+                },
+                "select": {
+                  "name": "SUM",
+                  "parameters": [
+                    {
+                      "name": "failure",
+                      "type": "functionParameter"
+                    }
+                  ],
+                  "type": "function"
+                }
+              },
+              "sqlExpression": "SELECT SUM(failure) FROM \"${prefix}amendmenteventtransformer\"",
+              "statistic": "Sum"
+            }
+          ],
+          "title": "Amendment Event Transformer Failures",
+          "type": "gauge"
+        }
+      ],
+      "title": "Amendment Event Transformer",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 30
+      },
+      "id": 9,
+      "panels": [
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "berau1co8zoqod"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 0,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineStyle": {
+                  "fill": "solid"
+                },
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "auto",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 18,
+            "x": 0,
+            "y": 4
+          },
+          "id": 17,
+          "options": {
+            "legend": {
+              "calcs": ["mean", "min", "max", "sum"],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "mode": "single",
+              "sort": "none"
+            }
+          },
+          "pluginVersion": "10.4.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "cloudwatch",
+                "uid": "berau1co8zoqod"
+              },
+              "dimensions": {},
+              "expression": "",
+              "id": "",
+              "label": "",
+              "logGroups": [],
+              "matchExact": false,
+              "metricEditorMode": 0,
+              "metricName": "success",
+              "metricQueryType": 0,
+              "namespace": "${prefix}getletters",
+              "period": "$agg",
+              "queryMode": "Metrics",
+              "refId": "A",
+              "region": "$region",
+              "sql": {
+                "from": {
+                  "property": {
+                    "name": "${namespacePrefix}getletter",
+                    "type": "string"
+                  },
+                  "type": "property"
+                },
+                "groupBy": {
+                  "expressions": [
+                    {
+                      "property": {
+                        "name": "status",
+                        "type": "string"
+                      },
+                      "type": "groupBy"
+                    }
+                  ],
+                  "type": "and"
+                },
+                "select": {
+                  "name": "SUM",
+                  "parameters": [
+                    {
+                      "name": "success",
+                      "type": "functionParameter"
+                    }
+                  ],
+                  "type": "function"
+                }
+              },
+              "sqlExpression": "SELECT SUM(success) FROM \"${namespacePrefix}getletter\" GROUP BY status",
+              "statistic": "Sum"
+            }
+          ],
+          "title": "Get Letters by supplier",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "berau1co8zoqod"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 1
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 4,
+            "x": 18,
+            "y": 4
+          },
+          "id": 18,
+          "options": {
+            "minVizHeight": 75,
+            "minVizWidth": 75,
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": ["sum"],
+              "fields": "",
+              "values": false
+            },
+            "showThresholdLabels": false,
+            "showThresholdMarkers": true,
+            "sizing": "auto"
+          },
+          "pluginVersion": "10.4.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "cloudwatch",
+                "uid": "berau1co8zoqod"
+              },
+              "dimensions": {},
+              "expression": "",
+              "id": "",
+              "label": "Failure",
+              "logGroups": [],
+              "matchExact": false,
+              "metricEditorMode": 0,
+              "metricName": "success",
+              "metricQueryType": 1,
+              "namespace": "${prefix}getletters",
+              "period": "",
+              "queryMode": "Metrics",
+              "refId": "A",
+              "region": "$region",
+              "sql": {
+                "from": {
+                  "property": {
+                    "name": "${prefix}getletters",
+                    "type": "string"
+                  },
+                  "type": "property"
+                },
+                "select": {
+                  "name": "SUM",
+                  "parameters": [
+                    {
+                      "name": "failure",
+                      "type": "functionParameter"
+                    }
+                  ],
+                  "type": "function"
+                }
+              },
+              "sqlExpression": "SELECT SUM(failure) FROM \"${prefix}getletters\"",
+              "statistic": "Sum"
+            }
+          ],
+          "title": "Get Letters Failures",
+          "type": "gauge"
+        }
+      ],
+      "title": "Get Letters",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 31
+      },
+      "id": 6,
+      "panels": [
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "berau1co8zoqod"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 0,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineStyle": {
+                  "fill": "solid"
+                },
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "auto",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 18,
+            "x": 0,
+            "y": 5
+          },
+          "id": 7,
+          "options": {
+            "legend": {
+              "calcs": ["mean", "min", "max", "sum"],
+              "displayMode": "table",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "mode": "single",
+              "sort": "none"
+            }
+          },
+          "pluginVersion": "10.4.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "cloudwatch",
+                "uid": "berau1co8zoqod"
+              },
+              "dimensions": {},
+              "expression": "",
+              "id": "",
+              "label": "",
+              "logGroups": [],
+              "matchExact": false,
+              "metricEditorMode": 0,
+              "metricName": "success",
+              "metricQueryType": 0,
+              "namespace": "${prefix}getletter",
+              "period": "$agg",
+              "queryMode": "Metrics",
+              "refId": "A",
+              "region": "$region",
+              "sql": {
+                "from": {
+                  "property": {
+                    "name": "${namespacePrefix}getletter",
+                    "type": "string"
+                  },
+                  "type": "property"
+                },
+                "groupBy": {
+                  "expressions": [
+                    {
+                      "property": {
+                        "name": "status",
+                        "type": "string"
+                      },
+                      "type": "groupBy"
+                    }
+                  ],
+                  "type": "and"
+                },
+                "select": {
+                  "name": "SUM",
+                  "parameters": [
+                    {
+                      "name": "success",
+                      "type": "functionParameter"
+                    }
+                  ],
+                  "type": "function"
+                }
+              },
+              "sqlExpression": "SELECT SUM(success) FROM \"${namespacePrefix}getletter\" GROUP BY status",
+              "statistic": "Sum"
+            }
+          ],
+          "title": "Get Letter by supplier",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "berau1co8zoqod"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 1
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 3,
+            "x": 18,
+            "y": 5
+          },
+          "id": 8,
+          "options": {
+            "minVizHeight": 75,
+            "minVizWidth": 75,
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": ["sum"],
+              "fields": "",
+              "values": false
+            },
+            "showThresholdLabels": false,
+            "showThresholdMarkers": true,
+            "sizing": "auto"
+          },
+          "pluginVersion": "10.4.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "cloudwatch",
+                "uid": "berau1co8zoqod"
+              },
+              "dimensions": {},
+              "expression": "",
+              "id": "",
+              "label": "Failure",
+              "logGroups": [],
+              "matchExact": false,
+              "metricEditorMode": 0,
+              "metricName": "success",
+              "metricQueryType": 1,
+              "namespace": "${prefix}getletter",
+              "period": "",
+              "queryMode": "Metrics",
+              "refId": "A",
+              "region": "$region",
+              "sql": {
+                "from": {
+                  "property": {
+                    "name": "${prefix}getletter",
+                    "type": "string"
+                  },
+                  "type": "property"
+                },
+                "select": {
+                  "name": "SUM",
+                  "parameters": [
+                    {
+                      "name": "failure",
+                      "type": "functionParameter"
+                    }
+                  ],
+                  "type": "function"
+                }
+              },
+              "sqlExpression": "SELECT SUM(failure) FROM \"${prefix}getletter\"",
+              "statistic": "Sum"
+            }
+          ],
+          "title": "Get Letter Failures",
+          "type": "gauge"
+        }
+      ],
+      "title": "Get Letter",
+      "type": "row"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 32
+      },
+      "id": 5,
+      "panels": [],
+      "title": "Post Letters",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "cloudwatch",
+        "uid": "berau1co8zoqod"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 1,
+            "pointSize": 8,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "fieldMinMax": false,
+          "mappings": [],
+          "noValue": "0",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 14,
+        "x": 0,
+        "y": 33
+      },
+      "id": 1,
+      "options": {
+        "legend": {
+          "calcs": ["mean", "min", "max", "sum"],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.4.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "berau1co8zoqod"
+          },
+          "dimensions": {},
+          "expression": "",
+          "id": "",
+          "label": "${SUM}",
+          "logGroups": [],
+          "matchExact": false,
+          "metricEditorMode": 0,
+          "metricName": "success",
+          "metricQueryType": 1,
+          "namespace": "${prefix}postletters",
+          "period": "$agg",
+          "queryMode": "Metrics",
+          "refId": "A",
+          "region": "$region",
+          "sql": {
+            "from": {
+              "property": {
+                "name": "${prefix}postletters",
+                "type": "string"
+              },
+              "type": "property"
+            },
+            "groupBy": {
+              "expressions": [
+                {
+                  "property": {
+                    "name": "status",
+                    "type": "string"
+                  },
+                  "type": "groupBy"
+                }
+              ],
+              "type": "and"
+            },
+            "select": {
+              "name": "SUM",
+              "parameters": [
+                {
+                  "name": "success",
+                  "type": "functionParameter"
+                }
+              ],
+              "type": "function"
+            }
+          },
+          "sqlExpression": "SELECT SUM(success) FROM \"${prefix}postletters\" GROUP BY status",
+          "statistic": "Sum"
+        }
+      ],
+      "title": "Post Letters by Status",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "cloudwatch",
+        "uid": "berau1co8zoqod"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 5,
+        "x": 14,
+        "y": 33
+      },
+      "id": 21,
+      "options": {
+        "minVizHeight": 75,
+        "minVizWidth": 75,
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": ["sum"],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true,
+        "sizing": "auto"
+      },
+      "pluginVersion": "10.4.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "berau1co8zoqod"
+          },
+          "dimensions": {},
+          "expression": "",
+          "id": "",
+          "label": "",
+          "logGroups": [],
+          "matchExact": false,
+          "metricEditorMode": 0,
+          "metricName": "success",
+          "metricQueryType": 1,
+          "namespace": "${prefix}postletters",
+          "period": "",
+          "queryMode": "Metrics",
+          "refId": "A",
+          "region": "$region",
+          "sql": {
+            "from": {
+              "property": {
+                "name": "${prefix}postletters",
+                "type": "string"
+              },
+              "type": "property"
+            },
+            "groupBy": {
+              "expressions": [
+                {
+                  "property": {
+                    "name": "supplier",
+                    "type": "string"
+                  },
+                  "type": "groupBy"
+                }
+              ],
+              "type": "and"
+            },
+            "select": {
+              "name": "SUM",
+              "parameters": [
+                {
+                  "name": "success",
+                  "type": "functionParameter"
+                }
+              ],
+              "type": "function"
+            }
+          },
+          "sqlExpression": "SELECT SUM(success) FROM \"${prefix}postletters\" GROUP BY supplier",
+          "statistic": "Sum"
+        }
+      ],
+      "title": "Post Letters by suppliers",
+      "type": "gauge"
+    },
+    {
+      "datasource": {
+        "type": "cloudwatch",
+        "uid": "berau1co8zoqod"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 4,
+        "x": 19,
+        "y": 33
+      },
+      "id": 22,
+      "options": {
+        "minVizHeight": 75,
+        "minVizWidth": 75,
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": ["sum"],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true,
+        "sizing": "auto"
+      },
+      "pluginVersion": "10.4.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "berau1co8zoqod"
+          },
+          "dimensions": {},
+          "expression": "",
+          "id": "",
+          "label": "Errors",
+          "logGroups": [],
+          "matchExact": false,
+          "metricEditorMode": 0,
+          "metricName": "success",
+          "metricQueryType": 1,
+          "namespace": "${prefix}postletters",
+          "period": "",
+          "queryMode": "Metrics",
+          "refId": "A",
+          "region": "$region",
+          "sql": {
+            "from": {
+              "property": {
+                "name": "${prefix}postletters",
+                "type": "string"
+              },
+              "type": "property"
+            },
+            "select": {
+              "name": "SUM",
+              "parameters": [
+                {
+                  "name": "failure",
+                  "type": "functionParameter"
+                }
+              ],
+              "type": "function"
+            }
+          },
+          "sqlExpression": "SELECT SUM(failure) FROM \"${prefix}postletters\"",
+          "statistic": "Sum"
+        }
+      ],
+      "title": "Post Letters Failures",
+      "type": "gauge"
+    }
+  ],
+  "refresh": "",
+  "schemaVersion": 39,
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "current": {
+          "selected": false,
+          "text": "CloudWatch-suppliers",
+          "value": "berau1co8zoqod"
+        },
+        "hide": 0,
+        "includeAll": false,
+        "label": "Datasource",
+        "multi": false,
+        "name": "datasource",
+        "options": [],
+        "query": "cloudwatch",
+        "refresh": 1,
+        "regex": "CloudWatch-suppliers",
+        "skipUrlSync": false,
+        "type": "datasource"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "main",
+          "value": "main"
+        },
+        "hide": 0,
+        "label": "Environment",
+        "name": "env",
+        "options": [
+          {
+            "selected": true,
+            "text": "main",
+            "value": "main"
+          }
+        ],
+        "query": "main",
+        "skipUrlSync": false,
+        "type": "textbox"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "nhs-main-supapi-",
+          "value": "nhs-main-supapi-"
+        },
+        "description": "nhs-[env]-supapi",
+        "hide": 0,
+        "includeAll": false,
+        "label": "Namespace prefix",
+        "multi": false,
+        "name": "prefix",
+        "options": [
+          {
+            "selected": true,
+            "text": "nhs-main-supapi-",
+            "value": "nhs-main-supapi-"
+          }
+        ],
+        "query": "nhs-${env}-supapi-",
+        "queryValue": "",
+        "skipUrlSync": false,
+        "type": "custom"
+      },
+      {
+        "auto": true,
+        "auto_count": 50,
+        "auto_min": "10s",
+        "current": {
+          "selected": false,
+          "text": "1m",
+          "value": "1m"
+        },
+        "hide": 0,
+        "label": "Aggregation",
+        "name": "agg",
+        "options": [
+          {
+            "selected": false,
+            "text": "auto",
+            "value": "$__auto_interval_agg"
+          },
+          {
+            "selected": false,
+            "text": "1s",
+            "value": "1s"
+          },
+          {
+            "selected": false,
+            "text": "5s",
+            "value": "5s"
+          },
+          {
+            "selected": false,
+            "text": "10s",
+            "value": "10s"
+          },
+          {
+            "selected": false,
+            "text": "30s",
+            "value": "30s"
+          },
+          {
+            "selected": true,
+            "text": "1m",
+            "value": "1m"
+          },
+          {
+            "selected": false,
+            "text": "5m",
+            "value": "5m"
+          },
+          {
+            "selected": false,
+            "text": "15m",
+            "value": "15m"
+          },
+          {
+            "selected": false,
+            "text": "1h",
+            "value": "1h"
+          },
+          {
+            "selected": false,
+            "text": "6h",
+            "value": "6h"
+          },
+          {
+            "selected": false,
+            "text": "1d",
+            "value": "1d"
+          },
+          {
+            "selected": false,
+            "text": "7d",
+            "value": "7d"
+          },
+          {
+            "selected": false,
+            "text": "30d",
+            "value": "30d"
+          }
+        ],
+        "query": "1s,5s,10s,30s,1m,5m,15m,1h,6h,1d,7d,30d",
+        "queryValue": "",
+        "refresh": 2,
+        "skipUrlSync": false,
+        "type": "interval"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "eu-west-2",
+          "value": "eu-west-2"
+        },
+        "datasource": {
+          "type": "cloudwatch",
+          "uid": "$datasource"
+        },
+        "definition": "regions()",
+        "hide": 0,
+        "includeAll": false,
+        "label": "Region",
+        "multi": false,
+        "name": "region",
+        "options": [],
+        "query": "regions()",
+        "refresh": 1,
+        "regex": "eu-west-2",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "current": {
+          "selected": true,
+          "text": "nhs-main-supapi-amendmenteventtransformer",
+          "value": "nhs-main-supapi-amendmenteventtransformer"
+        },
+        "datasource": {
+          "type": "cloudwatch",
+          "uid": "${datasource}"
+        },
+        "definition": "",
+        "description": "List the available lambda namespaces for the selected environment",
+        "hide": 0,
+        "includeAll": false,
+        "label": "Function's Namespace",
+        "multi": false,
+        "name": "functionNamespace",
+        "options": [],
+        "query": {
+          "attributeName": "",
+          "dimensionFilters": {},
+          "dimensionKey": "",
+          "ec2Filters": {},
+          "instanceID": "",
+          "logGroupPrefix": "/aws/lambda/$prefix",
+          "metricName": "",
+          "namespace": "AWS/Lambda",
+          "queryType": "logGroups",
+          "refId": "CloudWatchVariableQueryEditor-VariableQuery",
+          "region": "$region",
+          "resourceType": "",
+          "tags": {}
+        },
+        "refresh": 1,
+        "regex": "/\\/aws\\/lambda\\/([^:]+)/",
+        "skipUrlSync": false,
+        "sort": 1,
+        "type": "query"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-7d",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "Lambda Custom metrics",
+  "uid": "efdniu44oahoga",
+  "version": 26,
+  "weekStart": ""
+}
