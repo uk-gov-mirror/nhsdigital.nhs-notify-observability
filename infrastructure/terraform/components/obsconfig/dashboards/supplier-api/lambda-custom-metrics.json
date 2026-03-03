@@ -37,7 +37,7 @@
     {
       "datasource": {
         "type": "cloudwatch",
-        "uid": "berau1co8zoqod"
+        "uid": "${datasource}"
       },
       "fieldConfig": {
         "defaults": {
@@ -117,7 +117,7 @@
         {
           "datasource": {
             "type": "cloudwatch",
-            "uid": "berau1co8zoqod"
+            "uid": "${datasource}"
           },
           "dimensions": {},
           "expression": "",
@@ -185,7 +185,7 @@
     {
       "datasource": {
         "type": "cloudwatch",
-        "uid": "berau1co8zoqod"
+        "uid": "${datasource}"
       },
       "fieldConfig": {
         "defaults": {
@@ -275,7 +275,7 @@
         {
           "datasource": {
             "type": "cloudwatch",
-            "uid": "berau1co8zoqod"
+            "uid": "${datasource}"
           },
           "dimensions": {},
           "expression": "",
@@ -345,7 +345,7 @@
     {
       "datasource": {
         "type": "cloudwatch",
-        "uid": "berau1co8zoqod"
+        "uid": "${datasource}"
       },
       "fieldConfig": {
         "defaults": {
@@ -435,7 +435,7 @@
         {
           "datasource": {
             "type": "cloudwatch",
-            "uid": "berau1co8zoqod"
+            "uid": "${datasource}"
           },
           "dimensions": {},
           "expression": "",
@@ -499,7 +499,7 @@
     {
       "datasource": {
         "type": "cloudwatch",
-        "uid": "berau1co8zoqod"
+        "uid": "${datasource}"
       },
       "fieldConfig": {
         "defaults": {
@@ -556,7 +556,7 @@
         {
           "datasource": {
             "type": "cloudwatch",
-            "uid": "berau1co8zoqod"
+            "uid": "${datasource}"
           },
           "dimensions": {},
           "expression": "",
@@ -613,7 +613,7 @@
     {
       "datasource": {
         "type": "cloudwatch",
-        "uid": "berau1co8zoqod"
+        "uid": "${datasource}"
       },
       "description": "",
       "fieldConfig": {
@@ -665,7 +665,7 @@
         {
           "datasource": {
             "type": "cloudwatch",
-            "uid": "berau1co8zoqod"
+            "uid": "${datasource}"
           },
           "dimensions": {},
           "expression": "",
@@ -720,7 +720,7 @@
         {
           "datasource": {
             "type": "cloudwatch",
-            "uid": "berau1co8zoqod"
+            "uid": "${datasource}"
           },
           "fieldConfig": {
             "defaults": {
@@ -809,7 +809,7 @@
             {
               "datasource": {
                 "type": "cloudwatch",
-                "uid": "berau1co8zoqod"
+                "uid": "${datasource}"
               },
               "dimensions": {},
               "expression": "",
@@ -866,7 +866,7 @@
         {
           "datasource": {
             "type": "cloudwatch",
-            "uid": "berau1co8zoqod"
+            "uid": "${datasource}"
           },
           "fieldConfig": {
             "defaults": {
@@ -923,7 +923,7 @@
             {
               "datasource": {
                 "type": "cloudwatch",
-                "uid": "berau1co8zoqod"
+                "uid": "${datasource}"
               },
               "dimensions": {},
               "expression": "",
@@ -980,7 +980,7 @@
         {
           "datasource": {
             "type": "cloudwatch",
-            "uid": "berau1co8zoqod"
+            "uid": "${datasource}"
           },
           "description": "",
           "fieldConfig": {
@@ -1031,7 +1031,7 @@
             {
               "datasource": {
                 "type": "cloudwatch",
-                "uid": "berau1co8zoqod"
+                "uid": "${datasource}"
               },
               "dimensions": {},
               "expression": "",
@@ -1090,7 +1090,7 @@
         {
           "datasource": {
             "type": "cloudwatch",
-            "uid": "berau1co8zoqod"
+            "uid": "${datasource}"
           },
           "fieldConfig": {
             "defaults": {
@@ -1173,7 +1173,7 @@
             {
               "datasource": {
                 "type": "cloudwatch",
-                "uid": "berau1co8zoqod"
+                "uid": "${datasource}"
               },
               "dimensions": {},
               "expression": "",
@@ -1230,7 +1230,7 @@
         {
           "datasource": {
             "type": "cloudwatch",
-            "uid": "berau1co8zoqod"
+            "uid": "${datasource}"
           },
           "fieldConfig": {
             "defaults": {
@@ -1280,7 +1280,7 @@
             {
               "datasource": {
                 "type": "cloudwatch",
-                "uid": "berau1co8zoqod"
+                "uid": "${datasource}"
               },
               "dimensions": {},
               "expression": "",
@@ -1339,7 +1339,7 @@
         {
           "datasource": {
             "type": "cloudwatch",
-            "uid": "berau1co8zoqod"
+            "uid": "${datasource}"
           },
           "fieldConfig": {
             "defaults": {
@@ -1423,7 +1423,7 @@
             {
               "datasource": {
                 "type": "cloudwatch",
-                "uid": "berau1co8zoqod"
+                "uid": "${datasource}"
               },
               "dimensions": {},
               "expression": "",
@@ -1480,7 +1480,7 @@
         {
           "datasource": {
             "type": "cloudwatch",
-            "uid": "berau1co8zoqod"
+            "uid": "${datasource}"
           },
           "description": "",
           "fieldConfig": {
@@ -1537,7 +1537,7 @@
             {
               "datasource": {
                 "type": "cloudwatch",
-                "uid": "berau1co8zoqod"
+                "uid": "${datasource}"
               },
               "dimensions": {},
               "expression": "",
@@ -1594,7 +1594,7 @@
         {
           "datasource": {
             "type": "cloudwatch",
-            "uid": "berau1co8zoqod"
+            "uid": "${datasource}"
           },
           "description": "",
           "fieldConfig": {
@@ -1645,7 +1645,7 @@
             {
               "datasource": {
                 "type": "cloudwatch",
-                "uid": "berau1co8zoqod"
+                "uid": "${datasource}"
               },
               "dimensions": {},
               "expression": "",
@@ -1704,7 +1704,7 @@
         {
           "datasource": {
             "type": "cloudwatch",
-            "uid": "berau1co8zoqod"
+            "uid": "${datasource}"
           },
           "fieldConfig": {
             "defaults": {
@@ -1787,7 +1787,7 @@
             {
               "datasource": {
                 "type": "cloudwatch",
-                "uid": "berau1co8zoqod"
+                "uid": "${datasource}"
               },
               "dimensions": {},
               "expression": "",
@@ -1844,7 +1844,7 @@
         {
           "datasource": {
             "type": "cloudwatch",
-            "uid": "berau1co8zoqod"
+            "uid": "${datasource}"
           },
           "fieldConfig": {
             "defaults": {
@@ -1894,7 +1894,7 @@
             {
               "datasource": {
                 "type": "cloudwatch",
-                "uid": "berau1co8zoqod"
+                "uid": "${datasource}"
               },
               "dimensions": {},
               "expression": "",
@@ -1953,7 +1953,7 @@
         {
           "datasource": {
             "type": "cloudwatch",
-            "uid": "berau1co8zoqod"
+            "uid": "${datasource}"
           },
           "fieldConfig": {
             "defaults": {
@@ -2036,7 +2036,7 @@
             {
               "datasource": {
                 "type": "cloudwatch",
-                "uid": "berau1co8zoqod"
+                "uid": "${datasource}"
               },
               "dimensions": {},
               "expression": "",
@@ -2093,7 +2093,7 @@
         {
           "datasource": {
             "type": "cloudwatch",
-            "uid": "berau1co8zoqod"
+            "uid": "${datasource}"
           },
           "fieldConfig": {
             "defaults": {
@@ -2143,7 +2143,7 @@
             {
               "datasource": {
                 "type": "cloudwatch",
-                "uid": "berau1co8zoqod"
+                "uid": "${datasource}"
               },
               "dimensions": {},
               "expression": "",
@@ -2202,7 +2202,7 @@
         {
           "datasource": {
             "type": "cloudwatch",
-            "uid": "berau1co8zoqod"
+            "uid": "${datasource}"
           },
           "fieldConfig": {
             "defaults": {
@@ -2291,7 +2291,7 @@
             {
               "datasource": {
                 "type": "cloudwatch",
-                "uid": "berau1co8zoqod"
+                "uid": "${datasource}"
               },
               "dimensions": {},
               "expression": "",
@@ -2348,7 +2348,7 @@
         {
           "datasource": {
             "type": "cloudwatch",
-            "uid": "berau1co8zoqod"
+            "uid": "${datasource}"
           },
           "fieldConfig": {
             "defaults": {
@@ -2394,7 +2394,7 @@
             {
               "datasource": {
                 "type": "cloudwatch",
-                "uid": "berau1co8zoqod"
+                "uid": "${datasource}"
               },
               "dimensions": {},
               "expression": "",
@@ -2451,7 +2451,7 @@
         {
           "datasource": {
             "type": "cloudwatch",
-            "uid": "berau1co8zoqod"
+            "uid": "${datasource}"
           },
           "fieldConfig": {
             "defaults": {
@@ -2501,7 +2501,7 @@
             {
               "datasource": {
                 "type": "cloudwatch",
-                "uid": "berau1co8zoqod"
+                "uid": "${datasource}"
               },
               "dimensions": {},
               "expression": "",
@@ -2563,7 +2563,7 @@
     {
       "datasource": {
         "type": "cloudwatch",
-        "uid": "berau1co8zoqod"
+        "uid": "${datasource}"
       },
       "fieldConfig": {
         "defaults": {
@@ -2613,7 +2613,7 @@
         {
           "datasource": {
             "type": "cloudwatch",
-            "uid": "berau1co8zoqod"
+            "uid": "${datasource}"
           },
           "dimensions": {},
           "expression": "",
@@ -2658,7 +2658,7 @@
     {
       "datasource": {
         "type": "cloudwatch",
-        "uid": "berau1co8zoqod"
+        "uid": "${datasource}"
       },
       "fieldConfig": {
         "defaults": {
@@ -2709,7 +2709,7 @@
         {
           "datasource": {
             "type": "cloudwatch",
-            "uid": "berau1co8zoqod"
+            "uid": "${datasource}"
           },
           "dimensions": {},
           "expression": "",
