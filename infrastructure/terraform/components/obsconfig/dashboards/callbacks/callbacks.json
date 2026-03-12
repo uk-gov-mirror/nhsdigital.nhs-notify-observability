@@ -1492,7 +1492,7 @@
         {
           "id": "renameByRegex",
           "options": {
-            "regex": "nhs-.*-nudge-(.*)",
+            "regex": "nhs-.*-callbacks-(.*)",
             "renamePattern": "$1"
           }
         }
@@ -1740,6 +1740,6 @@
   "timezone": "browser",
   "title": "Client Callbacks Overview",
   "uid": "ff9xrhncwiiv4c",
-  "version": 64,
+  "version": 65,
   "weekStart": ""
 }
