@@ -1498,6 +1498,169 @@
         }
       ],
       "type": "stat"
+    },
+    {
+      "gridPos": {
+        "h": 2,
+        "w": 21,
+        "x": 0,
+        "y": 47
+      },
+      "id": 50,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "## Per-Client DLQ Health",
+        "mode": "markdown"
+      },
+      "pluginVersion": "10.4.1",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "datasource": {
+        "type": "cloudwatch",
+        "uid": "${datasrc}"
+      },
+      "description": "Current message depth of each per-client delivery DLQ. Yellow \u22651 (attention needed), red \u226510 (action required).",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "yellow",
+                "value": 1
+              },
+              {
+                "color": "red",
+                "value": 10
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 21,
+        "x": 0,
+        "y": 49
+      },
+      "id": 51,
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.1",
+      "targets": [
+        {
+          "accountId": "all",
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "${datasrc}"
+          },
+          "dimensions": {},
+          "expression": "",
+          "hide": false,
+          "id": "",
+          "label": "",
+          "logGroups": [],
+          "matchExact": false,
+          "metricEditorMode": 0,
+          "metricName": "ApproximateNumberOfMessagesVisible",
+          "metricQueryType": 1,
+          "namespace": "AWS/SQS",
+          "period": "",
+          "queryMode": "Metrics",
+          "refId": "A",
+          "region": "eu-west-2",
+          "sql": {
+            "from": {
+              "name": "SCHEMA",
+              "parameters": [
+                {
+                  "name": "AWS/SQS",
+                  "type": "functionParameter"
+                },
+                {
+                  "name": "QueueName",
+                  "type": "functionParameter"
+                }
+              ],
+              "type": "function"
+            },
+            "groupBy": {
+              "expressions": [
+                {
+                  "property": {
+                    "name": "QueueName",
+                    "type": "string"
+                  },
+                  "type": "groupBy"
+                }
+              ],
+              "type": "and"
+            },
+            "select": {
+              "name": "MAX",
+              "parameters": [
+                {
+                  "name": "ApproximateNumberOfMessagesVisible",
+                  "type": "functionParameter"
+                }
+              ],
+              "type": "function"
+            }
+          },
+          "sqlExpression": "SELECT MAX(ApproximateNumberOfMessagesVisible) FROM SCHEMA(\"AWS/SQS\", QueueName) GROUP BY QueueName",
+          "statistic": "Maximum"
+        }
+      ],
+      "title": "Per-Client DLQ Depth",
+      "transformations": [
+        {
+          "id": "filterByName",
+          "options": {
+            "include": {
+              "pattern": ".*-callbacks-.*-dlq-queue"
+            }
+          }
+        },
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": ".*-callbacks-(.+)-dlq-queue",
+            "renamePattern": "$1"
+          }
+        }
+      ],
+      "type": "stat"
     }
   ],
   "refresh": "",
@@ -1577,6 +1740,6 @@
   "timezone": "browser",
   "title": "Client Callbacks Overview",
   "uid": "ff9xrhncwiiv4c",
-  "version": 62,
+  "version": 64,
   "weekStart": ""
 }
