@@ -28,7 +28,8 @@
   "name": "nhs-notify-observability",
   "overrides": {
     "minimatch": "^10.2.4",
-    "fast-xml-parser": "^5.3.6"
+    "fast-xml-parser": "^5.3.6",
+    "flatted": "^3.4.0"
   },
   "private": true,
   "scripts": {
