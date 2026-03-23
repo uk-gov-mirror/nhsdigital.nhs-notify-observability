@@ -153,35 +153,36 @@ jobs:
         uses: asdf-vm/actions/setup@1902764435ca0dd2f3388eea723a4f92a4eb8302
       - name: "Lint Terraform"
         uses: NHSDigital/nhs-notify-shared-modules/.github/actions/lint-terraform@3.0.0
-  trivy-iac:
-    name: "Trivy IaC Scan"
-    permissions:
-      contents: read
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    needs: detect-terraform-changes
-    if: needs.detect-terraform-changes.outputs.terraform_changed == 'true'
-    steps:
-      - name: "Checkout code"
-        uses: actions/checkout@v4
-      - name: "Setup ASDF"
-        uses: asdf-vm/actions/setup@1902764435ca0dd2f3388eea723a4f92a4eb8302
-      - name: "Trivy IaC Scan"
-        uses: NHSDigital/nhs-notify-shared-modules/.github/actions/trivy-iac@3.0.0
-  trivy-package:
-    if: ${{ !inputs.skip_trivy_package }}
-    name: "Trivy Package Scan"
-    permissions:
-      contents: read
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    steps:
-      - name: "Checkout code"
-        uses: actions/checkout@v4
-      - name: "Setup ASDF"
-        uses: asdf-vm/actions/setup@1902764435ca0dd2f3388eea723a4f92a4eb8302
-      - name: "Trivy Package Scan"
-        uses: NHSDigital/nhs-notify-shared-modules/.github/actions/trivy-package@3.0.0
+  #TODO - Re-visit Trivy usage https://nhsd-jira.digital.nhs.uk/browse/CCM-15549
+  # trivy-iac:
+  #  name: "Trivy IaC Scan"
+  #  permissions:
+  #    contents: read
+  #  runs-on: ubuntu-latest
+  #  timeout-minutes: 10
+  #  needs: detect-terraform-changes
+  #  if: needs.detect-terraform-changes.outputs.terraform_changed == 'true'
+  #  steps:
+  #    - name: "Checkout code"
+  #      uses: actions/checkout@v4
+  #    - name: "Setup ASDF"
+  #      uses: asdf-vm/actions/setup@1902764435ca0dd2f3388eea723a4f92a4eb8302
+  #    - name: "Trivy IaC Scan"
+  #      uses: NHSDigital/nhs-notify-shared-modules/.github/actions/trivy-iac@3.0.0
+  # trivy-package:
+  #  if: ${{ !inputs.skip_trivy_package }}
+  #  name: "Trivy Package Scan"
+  #  permissions:
+  #    contents: read
+  #  runs-on: ubuntu-latest
+  #  timeout-minutes: 10
+  #  steps:
+  #    - name: "Checkout code"
+  #      uses: actions/checkout@v4
+  #    - name: "Setup ASDF"
+  #      uses: asdf-vm/actions/setup@1902764435ca0dd2f3388eea723a4f92a4eb8302
+  #    - name: "Trivy Package Scan"
+  #      uses: NHSDigital/nhs-notify-shared-modules/.github/actions/trivy-package@3.0.0
   count-lines-of-code:
     name: "Count lines of code"
     runs-on: ubuntu-latest
