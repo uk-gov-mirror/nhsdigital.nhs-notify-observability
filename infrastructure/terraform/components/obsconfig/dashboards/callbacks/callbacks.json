@@ -405,11 +405,159 @@
       "type": "heatmap"
     },
     {
+      "datasource": {
+        "type": "cloudwatch",
+        "uid": "${datasrc}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisGridShow": true,
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 30,
+            "gradientMode": "hue",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "smooth",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 2,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 100
+              },
+              {
+                "color": "red",
+                "value": 1000
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 21,
+        "x": 0,
+        "y": 17
+      },
+      "id": 52,
+      "options": {
+        "legend": {
+          "calcs": [
+            "min",
+            "max",
+            "mean"
+          ],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.4.1",
+      "targets": [
+        {
+          "accountId": "all",
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "${datasrc}"
+          },
+          "dimensions": {
+            "QueueName": "${envCsi}-inbound-event-queue"
+          },
+          "expression": "",
+          "hide": false,
+          "id": "",
+          "label": "Visible Messages",
+          "logGroups": [],
+          "matchExact": false,
+          "metricEditorMode": 0,
+          "metricName": "ApproximateNumberOfMessagesVisible",
+          "metricQueryType": 0,
+          "namespace": "AWS/SQS",
+          "period": "60",
+          "queryMode": "Metrics",
+          "refId": "A",
+          "region": "eu-west-2",
+          "statistic": "Maximum"
+        },
+        {
+          "accountId": "all",
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "${datasrc}"
+          },
+          "dimensions": {
+            "QueueName": "${envCsi}-inbound-event-queue"
+          },
+          "expression": "",
+          "hide": false,
+          "id": "",
+          "label": "In-flight Messages",
+          "logGroups": [],
+          "matchExact": false,
+          "metricEditorMode": 0,
+          "metricName": "ApproximateNumberOfMessagesNotVisible",
+          "metricQueryType": 0,
+          "namespace": "AWS/SQS",
+          "period": "60",
+          "queryMode": "Metrics",
+          "refId": "B",
+          "region": "eu-west-2",
+          "statistic": "Maximum"
+        }
+      ],
+      "title": "Ingress Queue Depth",
+      "type": "timeseries"
+    },
+    {
       "gridPos": {
         "h": 2,
         "w": 21,
         "x": 0,
-        "y": 17
+        "y": 24
       },
       "id": 41,
       "options": {
@@ -498,7 +646,7 @@
         "h": 7,
         "w": 21,
         "x": 0,
-        "y": 19
+        "y": 26
       },
       "id": 42,
       "options": {
@@ -635,7 +783,7 @@
         "h": 6,
         "w": 10,
         "x": 0,
-        "y": 26
+        "y": 33
       },
       "id": 43,
       "options": {
@@ -772,7 +920,7 @@
         "h": 6,
         "w": 11,
         "x": 10,
-        "y": 26
+        "y": 33
       },
       "id": 44,
       "options": {
@@ -909,7 +1057,7 @@
         "h": 7,
         "w": 21,
         "x": 0,
-        "y": 32
+        "y": 39
       },
       "id": 47,
       "options": {
@@ -980,7 +1128,7 @@
         "h": 2,
         "w": 21,
         "x": 0,
-        "y": 39
+        "y": 46
       },
       "id": 7,
       "options": {
@@ -1028,7 +1176,7 @@
         "h": 6,
         "w": 3,
         "x": 0,
-        "y": 41
+        "y": 48
       },
       "id": 39,
       "options": {
@@ -1130,7 +1278,7 @@
         "h": 6,
         "w": 3,
         "x": 3,
-        "y": 41
+        "y": 48
       },
       "id": 40,
       "options": {
@@ -1232,7 +1380,7 @@
         "h": 6,
         "w": 3,
         "x": 6,
-        "y": 41
+        "y": 48
       },
       "id": 45,
       "options": {
@@ -1334,7 +1482,7 @@
         "h": 6,
         "w": 5,
         "x": 9,
-        "y": 41
+        "y": 48
       },
       "id": 46,
       "options": {
@@ -1439,7 +1587,7 @@
         "h": 6,
         "w": 3,
         "x": 14,
-        "y": 41
+        "y": 48
       },
       "id": 38,
       "options": {
@@ -1504,7 +1652,7 @@
         "h": 2,
         "w": 21,
         "x": 0,
-        "y": 47
+        "y": 54
       },
       "id": 50,
       "options": {
@@ -1558,7 +1706,7 @@
         "h": 8,
         "w": 21,
         "x": 0,
-        "y": 49
+        "y": 56
       },
       "id": 51,
       "options": {
@@ -1740,6 +1888,6 @@
   "timezone": "browser",
   "title": "Client Callbacks Overview",
   "uid": "ff9xrhncwiiv4c",
-  "version": 65,
+  "version": 70,
   "weekStart": ""
 }
