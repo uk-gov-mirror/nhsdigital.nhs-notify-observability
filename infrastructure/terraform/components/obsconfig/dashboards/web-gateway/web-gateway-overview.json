@@ -1719,7 +1719,7 @@
         "query": "cloudwatch",
         "queryValue": "",
         "refresh": 1,
-        "regex": ".*web-gateway",
+        "regex": ".*webui",
         "skipUrlSync": false,
         "type": "datasource"
       },
