@@ -7,7 +7,7 @@ on:
     branches:
       - "**"
   pull_request:
-    types: [opened, reopened]
+    types: [opened, reopened, edited]
     branches:
       - main
 
@@ -23,8 +23,6 @@ jobs:
         uses: NHSDigital/nhs-notify-shared-modules/.github/actions/check-pr-title-format@74ea8810c8d650bc3338cd84a8bb36e05589781c
         with:
           title: ${{ github.event.pull_request.title }}
-          error_message: 'PR title must match: CCM-1234: Some Text'
-
       - name: "Skip on non-PR events"
         if: github.event_name != 'pull_request'
         run: echo "Skipping PR title check for ${GITHUB_EVENT_NAME}"
