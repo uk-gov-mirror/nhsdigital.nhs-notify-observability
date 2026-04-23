@@ -20,7 +20,7 @@ jobs:
     steps:
       - name: "Check PR title format"
         if: github.event_name == 'pull_request'
-        uses: NHSDigital/nhs-notify-shared-modules/.github/actions/check-pr-title-format@74ea8810c8d650bc3338cd84a8bb36e05589781c
+        uses: NHSDigital/nhs-notify-shared-modules/.github/actions/check-pr-title-format@4e781d1d72739015821a380871aa5a66d070177c # 3.1.0
         with:
           title: ${{ github.event.pull_request.title }}
       - name: "Skip on non-PR events"
