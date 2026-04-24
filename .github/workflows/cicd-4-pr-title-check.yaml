@@ -1,8 +1,8 @@
-name: "0. PR Title Check"
+name: "4. PR Title Check"
 
 on:
   pull_request:
-    types: [opened, reopened, synchronize]
+    types: [opened, reopened, synchronize, edited]
     branches:
       - main
 
