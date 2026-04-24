@@ -2,7 +2,7 @@ name: "0. PR Title Check"
 
 on:
   pull_request:
-    types: [opened, reopened]
+    types: [opened, reopened, synchronize]
     branches:
       - main
 
