@@ -3,4 +3,8 @@ locals {
   aws_lambda_functions_dir_path = "../../../../lambdas"
   jira_url_path                 = "/notify/jira/url"
   jira_pat_token_path           = "/notify/jira/pat/token"
+  csoc_event_rule_shield_csoc_arn = var.csoc_log_forwarding ? format("arn:aws:events:%s:%s:event-bus/shield-eventbus",
+    var.region,
+    var.csoc_destination_account
+  ) : null
 }

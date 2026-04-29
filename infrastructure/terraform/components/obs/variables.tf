@@ -123,3 +123,16 @@ variable "enable_jira_ticket_creation" {
   description = "Whether to create Jira tickets for Cloudwatch alerts that meet the criteria defined in the lambda. Should be set to false in non-prod environments to save costs and avoid creating unnecessary tickets."
   default     = true
 }
+
+variable "csoc_log_forwarding" {
+  type        = bool
+  description = "Whether to send Shield alarm events to CSOC. Keep false for non-prod until CSOC confirm readiness."
+  default     = false
+}
+
+variable "csoc_destination_account" {
+  type        = string
+  description = "AWS account ID of the CSOC destination account. If null, no CSOC forwarding resources are created."
+  default     = null
+  nullable    = true
+}
